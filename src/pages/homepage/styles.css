@@ -1,0 +1,27 @@
+.container {
+    background-color: #101010;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+
+}
+
+.console {
+    color: #f1f1f1;
+    display: inline-block;
+}
+
+h1 {
+    color: #f1f1f1;
+    font-weight: 700;
+    font-size: 70px;
+    transition: margin .5s;
+}
+
+.title {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;  
+}
