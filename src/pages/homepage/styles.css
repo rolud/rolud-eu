@@ -25,3 +25,17 @@ h1 {
     flex-direction: column;
     justify-content: center;  
 }
+
+.Cursor {
+    color: #101010;
+}
+
+
+@media (max-width: 800px) {
+    .console {
+        color: #f1f1f1;
+        display: inline-block;
+        margin-bottom: 50px;
+    }
+        
+}
