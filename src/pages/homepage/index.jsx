@@ -4,14 +4,14 @@ import { useSpring, animated } from 'react-spring'
 import Typist from 'react-typist'
 
 const commands = [
-    "console.log('Hello there\\nI am Rolud')",
-    'std::cout << "Hello there\\nI am Rolud" << std::endl;',
-    'printf("Hello there\\nI am Rolud");',
-    'print "Hello there\\nI am Rolud"',
-    'PRINT "Hello there\\nI am Rolud"',
-    'PRINT *, "Hello there\\nI am Rolud"',
-    'DISPLAY "Hello there\\nI am Rolud".',
-    'System.out.println("Hello there\\nI am Rolud");',
+    "console.log('Hello there!\\nI am Rolud')",
+    'std::cout << "Hello there!\\nI am Rolud" << std::endl;',
+    'printf("Hello there!\\nI am Rolud");',
+    'print "Hello there!\\nI am Rolud"',
+    'PRINT "Hello there!\\nI am Rolud"',
+    'PRINT *, "Hello there!\\nI am Rolud"',
+    'DISPLAY "Hello there!\\nI am Rolud".',
+    'System.out.println("Hello there!\\nI am Rolud");',
 ]
 const HomePage = () => {
     const [titleProps, titleSpring] = useSpring(() => ({
