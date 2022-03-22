@@ -1,7 +1,7 @@
 import './styles.css'
 import * as React from 'react'
 import styled from 'styled-components'
-import { shuffle } from '../../utils/array'
+import { device } from '../../utils/devices'
 
 // https://www.schemecolor.com/vaporwave.php
 
@@ -19,6 +19,7 @@ const TileTitle = styled.h3`
     font-size: 1.5rem;
     transition: 1s;
     position: relative;
+    cursor: pointer;
 
     &:after {
         content: '';
@@ -32,6 +33,10 @@ const TileTitle = styled.h3`
         // transform-origin: left;
         transition: transform 500ms ease;
     }
+
+    @media ${device.mobileL.max} {
+        font-size: 1rem;
+    }
 `
 
 const Tile = styled.div`
@@ -43,29 +48,32 @@ const Tile = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    flex: 1;
     &:hover {
         transform-origin: center;
 
-        ${TileTitle} {
-            font-size: 1.8rem;
-            color: #fafafa;
-        }
-        ${TileTitle}:after {
-            transform: scaleX(1);
+        @media (hover) {
+            ${TileTitle} {
+                font-size: 1.8rem;
+            }
+            ${TileTitle}:after {
+                transform: scaleX(1);
+            }
         }
     }
 `
 
-const SectionLeft = styled.section`
+const TileWrapper = styled.section`
     height: 30%;
     display: flex;
     flex-direction: row;
-`
 
-const SectionRight = styled.section`
-    height: 30%;
-    display: flex;
-    flex-direction: row;
+    @media ${device.mobileL.max} {
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        margin: 5% 0;
+    }
 `
 
 const SectionCentral = styled.section`
@@ -73,65 +81,55 @@ const SectionCentral = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media ${device.mobileL.max} {
+        height: 60%;
+    }
 `
 
 const Title = styled.h1`
     color: #fafafa;
     font-size: 10rem;
+
+    @media ${device.tablet.max} {
+        font-size: 3rem;
+    }
 `
 
-const sectionLeftStyles = [
-    { width: '25%' /* backgroundColor: '#300350' */ },
-    { width: '45%' /* backgroundColor: '#94167F' */ },
-    { width: '30%' /* backgroundColor: '#E93479' */ },
-]
-const sectionRightStyles = [
-    { width: '55%' /* backgroundColor: '#F9AC53' */ },
-    { width: '30%' /* backgroundColor: '#F62E97' */ },
-    { width: '15%' /* backgroundColor: '#153CB4' */ },
-]
-
 const HomePage = () => {
-    const [leftTileStyles, setLeftStyles] = React.useState(sectionLeftStyles)
-    const [rightTileStyles, setRightStyles] = React.useState(sectionRightStyles)
-
-    React.useEffect(() => {
-        console.log('perform')
-        setLeftStyles(shuffle(sectionLeftStyles))
-        setRightStyles(shuffle(sectionRightStyles))
-    }, [])
-
     return (
         <Wrapper>
-            <SectionLeft>
-                <Tile style={leftTileStyles[0]}>
+            <TileWrapper>
+                <Tile>
                     <TileTitle onClick={() => window.open('https://github.com/rolud', '_blank')}>GitHub</TileTitle>
                 </Tile>
-                <Tile style={leftTileStyles[1]}>
+                <Tile>
                     <TileTitle onClick={() => window.open('https://instagram.com/rolud.dev', '_blank')}>
                         Instagram
                     </TileTitle>
                 </Tile>
-                <Tile style={leftTileStyles[2]}>
-                    <TileTitle>Linkedin</TileTitle>
+                <Tile>
+                    <TileTitle onClick={() => window.open('https://linkedin.com/in/roccoluigiscarcella', '_blank')}>
+                        Linkedin
+                    </TileTitle>
                 </Tile>
-            </SectionLeft>
+            </TileWrapper>
             <SectionCentral>
                 <Title>rolud</Title>
             </SectionCentral>
-            <SectionRight>
-                <Tile style={rightTileStyles[0]}>
-                    <TileTitle>Twitter</TileTitle>
+            <TileWrapper>
+                <Tile>
+                    <TileTitle onClick={() => window.open('https://twitter.com/roluds', '_blank')}>Twitter</TileTitle>
                 </Tile>
-                <Tile style={rightTileStyles[1]}>
+                <Tile>
                     <TileTitle onClick={() => window.open('https://stackoverflow.com/users/9686027/rolud', '_blank')}>
                         Stack Overflow
                     </TileTitle>
                 </Tile>
-                <Tile style={rightTileStyles[2]}>
+                <Tile>
                     <TileTitle>CV</TileTitle>
                 </Tile>
-            </SectionRight>
+            </TileWrapper>
         </Wrapper>
     )
 }
