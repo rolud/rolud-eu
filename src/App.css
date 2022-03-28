@@ -1,0 +1,54 @@
+html, body {
+    cursor: default;
+}
+
+html *, body * {
+    cursor: default;
+}
+
+.cursor {
+    pointer-events: none;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    position: fixed;
+    transform: translate(-50%, -50%);
+
+    transition: all 100ms ease;
+    transition-property: opacity, background-color, transform;
+
+    mix-blend-mode: difference;
+
+}
+
+
+.cursor--hidden {
+    opacity: 0
+}
+
+.cursor--clicked {
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: #fafafa
+}
+
+.cursor--dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: #fafafa;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    mix-blend-mode: difference;
+
+
+    transition: all 100ms ease;
+    transition-property: opacity;
+}
+
+.cursor--dot--hidden {
+    opacity: 0;
+}
