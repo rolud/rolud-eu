@@ -58,7 +58,9 @@ const NavBarMobile = () => {
                 />
                 <NavBarIcon icon="instagram" onClick={() => window.open('https://instagram.com/rolud.dev', '_blank')} />
                 <NavBarIcon icon="info" onClick={() => navigate('/about')} />
-                <NavBarIcon icon="file" onClick={() => console.log('todo')} />
+                <a href={/^it\b/.test(navigator.language) ? ResumeIT : ResumeEN} download>
+                    <NavBarIcon icon="file" />
+                </a>
             </NavContent>
         </>
     )
