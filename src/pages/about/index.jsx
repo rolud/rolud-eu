@@ -9,17 +9,20 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
     padding: 10rem;
-`
-
-export const Title = styled.h1`
-    color: #fafafa;
-    font-size: 4rem;
 
     @media ${device.tablet.max} {
-        font-size: 5rem;
+        padding: 4rem;
     }
 
     @media ${device.mobileL.max} {
+        padding: 2rem;
+    }
+`
+
+export const Title = styled.h1`
+    font-size: 4rem;
+
+    @media ${device.tablet.max} {
         font-size: 3rem;
     }
 `
@@ -27,6 +30,9 @@ export const Title = styled.h1`
 const Content = styled.p`
     text-align: end;
     width: 70%;
+    @media ${device.mobileL.max} {
+        width: 100%;
+    }
 `
 
 const Link = styled.a`

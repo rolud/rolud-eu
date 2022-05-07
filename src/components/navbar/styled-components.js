@@ -27,14 +27,13 @@ export const NavBackground = styled.div`
 export const NavContent = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 2rem 2rem 0 2rem;
+    margin-left: 2rem;
 
     @media ${device.mobileL.max} {
         flex-direction: row;
         width: 100vw;
-        height: unset;
-        margin: unset;
         justify-content: space-around;
+        margin-left: 0;
     }
 `
 

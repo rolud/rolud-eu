@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Instagram({ fill, style, ...props }) {
     return (
         <div style={style} {...props}>
-            <svg viewBox="0 0 512 512" {...props}>
+            <svg viewBox="0 0 512 512" height="2rem" width="2rem" {...props}>
                 <title>{'Logo Instagram'}</title>
                 <path
                     fill={fill || '#fff'}

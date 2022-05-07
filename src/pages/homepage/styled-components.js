@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
     margin-right: 12rem;
 
     @media ${device.mobileL.max} {
-        height: unset;
         width: 100vw;
         margin-right: unset;
         margin-bottom: 4rem;

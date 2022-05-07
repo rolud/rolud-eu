@@ -9,21 +9,43 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
     padding: 10rem;
+
+    @media ${device.tablet.max} {
+        padding: 4rem;
+    }
+
+    @media ${device.mobileL.max} {
+        padding: 2rem;
+    }
 `
+
 const NotFoundTitle = styled.h1`
     font-size: 14rem;
     margin: 0;
     padding: 0;
+
+    @media ${device.tablet.max} {
+        font-size: 10rem;
+    }
+
+    @media ${device.mobileM.max} {
+        font-size: 6rem;
+    }
+`
+
+const Content = styled.p`
+    font-size: 1.5rem;
+    text-align: end;
+
+    @media ${device.mobileL.max} {
+        font-size: 1rem;
+    }
 `
 
 export const Title = styled.h2`
     font-size: 4rem;
 
     @media ${device.tablet.max} {
-        font-size: 5rem;
-    }
-
-    @media ${device.mobileL.max} {
         font-size: 3rem;
     }
 `
@@ -34,7 +56,7 @@ const NotFoundPage = () => {
         <Wrapper>
             <Title onClick={() => navigate('/')}>rolud</Title>
             <NotFoundTitle>404</NotFoundTitle>
-            <p style={{ fontSize: '1.4rem' }}>Ups, seems there is nothing here</p>
+            <Content>Ups, seems there is nothing here</Content>
         </Wrapper>
     )
 }

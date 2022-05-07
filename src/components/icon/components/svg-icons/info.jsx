@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Info({ fill, style, ...props }) {
     return (
         <div style={style} {...props}>
-            <svg viewBox="0 0 512 512" {...props}>
+            <svg viewBox="0 0 512 512" height="2rem" width="2rem" {...props}>
                 <title>{'Information Circle'}</title>
                 <path
                     d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"

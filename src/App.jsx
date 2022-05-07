@@ -31,7 +31,6 @@ const PageWrapper = styled.div`
 
     @media ${device.mobileL.max} {
         flex-direction: column;
-        height: unset;
         width: 100vw;
     }
 `
