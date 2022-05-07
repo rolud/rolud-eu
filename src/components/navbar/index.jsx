@@ -5,6 +5,8 @@ import useWindowDimensions from '../../hooks/use-window-dimensions'
 import { sizes } from '../../utils/devices'
 import Icon from '../icon'
 import { useNavigate } from 'react-router-dom'
+import ResumeIT from '../../assets/pdfs/CV_Rocco_Luigi_Scarcella.pdf'
+import ResumeEN from '../../assets/pdfs/Resume_Rocco_Luigi_Scarcella.pdf'
 
 const NavBarItem = ({ text, onClick }) => {
     return (
@@ -24,6 +26,7 @@ const NavBarIcon = ({ icon, onClick }) => {
 
 const NavBarDesktop = () => {
     const navigate = useNavigate()
+
     return (
         <NavContent>
             <NavBarItem text="GitHub" onClick={() => window.open('https://github.com/rolud', '_blank')} />
@@ -33,7 +36,12 @@ const NavBarDesktop = () => {
             />
             <NavBarItem text="Instagram" onClick={() => window.open('https://instagram.com/rolud.dev', '_blank')} />
             <NavBarItem text="About me" onClick={() => navigate('/about')} />
-            <NavBarItem text="CV" onClick={() => console.log('todo')} />
+            <a
+                href={/^it\b/.test(navigator.language) ? ResumeIT : ResumeEN}
+                style={{ textDecorationLine: 'none' }}
+                download>
+                <NavBarItem text="CV" />
+            </a>
         </NavContent>
     )
 }
