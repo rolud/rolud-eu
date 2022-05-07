@@ -43,6 +43,7 @@ export const NavTitle = styled.h4`
     transition: 1s;
     position: relative;
     margin: 1.3rem 0;
+    cursor: pointer !important;
 
     &:after {
         content: '';

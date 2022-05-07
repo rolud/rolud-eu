@@ -1,9 +1,23 @@
 html, body {
     cursor: default;
+    color: #fafafa;
+    user-select: none;
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -webkit-user-select: none; /* Safari */
+    -webkit-touch-callout: none; /* iOS Safari */
 }
 
 html *, body * {
     cursor: default;
+    color: #fafafa;
+    user-select: none;
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -webkit-user-select: none; /* Safari */
+    -webkit-touch-callout: none; /* iOS Safari */
 }
 
 .cursor {

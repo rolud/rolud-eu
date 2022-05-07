@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import useWindowDimensions from '../../hooks/use-window-dimensions'
 import { sizes } from '../../utils/devices'
 import Icon from '../icon'
+import { useNavigate } from 'react-router-dom'
 
 const NavBarItem = ({ text, onClick }) => {
     return (
@@ -22,6 +23,7 @@ const NavBarIcon = ({ icon, onClick }) => {
 }
 
 const NavBarDesktop = () => {
+    const navigate = useNavigate()
     return (
         <NavContent>
             <NavBarItem text="GitHub" onClick={() => window.open('https://github.com/rolud', '_blank')} />
@@ -30,13 +32,14 @@ const NavBarDesktop = () => {
                 onClick={() => window.open('https://linkedin.com/in/roccoluigiscarcella', '_blank')}
             />
             <NavBarItem text="Instagram" onClick={() => window.open('https://instagram.com/rolud.dev', '_blank')} />
-            <NavBarItem text="About me" onClick={() => console.log('todo')} />
+            <NavBarItem text="About me" onClick={() => navigate('/about')} />
             <NavBarItem text="CV" onClick={() => console.log('todo')} />
         </NavContent>
     )
 }
 
 const NavBarMobile = () => {
+    const navigate = useNavigate()
     return (
         <>
             <NavContent>
@@ -46,7 +49,7 @@ const NavBarMobile = () => {
                     onClick={() => window.open('https://linkedin.com/in/roccoluigiscarcella', '_blank')}
                 />
                 <NavBarIcon icon="instagram" onClick={() => window.open('https://instagram.com/rolud.dev', '_blank')} />
-                <NavBarIcon icon="info" onClick={() => console.log('todo')} />
+                <NavBarIcon icon="info" onClick={() => navigate('/about')} />
                 <NavBarIcon icon="file" onClick={() => console.log('todo')} />
             </NavContent>
         </>
