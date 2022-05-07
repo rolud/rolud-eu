@@ -56,7 +56,9 @@ const Link = styled.a`
     }
 
     &:hover:after {
-        transform: scale(1);
+        @media (hover) {
+            transform: scale(1);
+        }
     }
 `
 
